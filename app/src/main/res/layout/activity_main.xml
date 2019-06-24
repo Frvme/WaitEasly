@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:id="@+id/drawer"
+        android:layout_width="230dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:orientation="vertical">
+        <ScrollView
+            android:fillViewport="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:alpha="0.8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:showDividers="middle"
+
+             android:dividerPadding="5dp">
+                <LinearLayout
+                    android:id="@+id/scan"
+                    android:onClick="ClickNavigation"
+                    android:layout_width="match_parent"
+                    android:paddingTop="10dp"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:background="@android:color/black"
+                    android:orientation="vertical">
+
+                    <ImageView
+                            android:src="@drawable/ic_scan"
+                            android:tint="@android:color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp" />
+                    <TextView
+                        android:textColor="@android:color/white"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:textStyle="bold"
+                        android:typeface="monospace"
+                        android:textSize="15dp"
+                        android:text="Scan QR Code"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/docs"
+                    android:onClick="ClickNavigation"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:background="@android:color/black"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_docs"
+                        android:tint="@android:color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp" />
+                    <TextView
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:typeface="monospace"
+                        android:textSize="15dp"
+                        android:text="Mon Dossier"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rdv"
+                    android:onClick="ClickNavigation"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@android:color/black"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:paddingTop="10dp"
+                        android:src="@drawable/ic_rdv"
+                        android:layout_width="match_parent"
+                        android:tint="@android:color/white"
+                        android:layout_height="40dp"
+                        />
+                    <TextView
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:typeface="monospace"
+                        android:textSize="15dp"
+                        android:text="Mes Rendez-vous"/>
+                </LinearLayout>
+
+
+
+                   <LinearLayout
+                    android:id="@+id/aide"
+                    android:onClick="ClickNavigation"
+                       android:background="@android:color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_marginTop="10dp"
+                        android:tint="@android:color/white"
+                        android:src="@drawable/ic_aide"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        />
+                    <TextView
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:textSize="15dp"
+                        android:typeface="monospace"
+                        android:text="Aide"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/avis"
+                    android:onClick="ClickNavigation"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:background="@android:color/black"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_avis"
+                        android:tint="@android:color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        />
+                    <TextView
+                        android:textColor="@android:color/white"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:textSize="15dp"
+                        android:typeface="monospace"
+                        android:text="Notez-nous"/>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>
