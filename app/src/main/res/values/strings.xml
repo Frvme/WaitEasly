@@ -10,5 +10,8 @@
     <string name="login">appMobile</string>
     <string name="pwd">123456</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>
