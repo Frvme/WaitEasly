@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/font"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.waiteasly.Authentification">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingTop="56dp"
+        android:paddingRight="24dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/ic_auth"/>
+
+        <!-- User -->
+
+        <EditText
+            android:id="@+id/input_UserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/user"
+            android:drawablePadding="10sp"
+            android:hint="Identifiant"
+            android:inputType="textPersonName" />
+
+        <!-- Email -->
+
+        <EditText
+            android:id="@+id/inscription_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/email"
+            android:drawablePadding="10sp"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+
+        <!-- Password -->
+
+        <EditText
+            android:id="@+id/inscription_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/lock"
+            android:drawablePadding="10sp"
+            android:hint="Password"
+            android:inputType="textPassword"/>
+
+        <!-- RE Password -->
+
+        <EditText
+            android:id="@+id/inscription_re_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/lock"
+            android:drawablePadding="10sp"
+            android:hint="Confirm password"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:id="@+id/btn_create_account"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/border_btn_radius"
+            android:padding="12dp"
+            android:text="Créer un compte"
+            />
+
+        <TextView android:id="@+id/link_signin1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="@string/signin1"
+            android:textColor="@android:color/background_light"
+            android:textSize="16dip"/>
+        <TextView android:id="@+id/link_signin2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="@string/signin2"
+            android:textColor="@android:color/background_light"
+            android:textSize="16dip"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

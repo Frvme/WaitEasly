@@ -3,7 +3,6 @@ package com.example.waiteasly;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -33,11 +32,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         mTitle=toolbar.findViewById(R.id.title);
-        option1=findViewById(R.id.scan);
+        /*option1=findViewById(R.id.scan);
         option2=findViewById(R.id.docs);
         option3=findViewById(R.id.rdv);
         option4=findViewById(R.id.aide);
-        option5=findViewById(R.id.avis);
+        option5=findViewById(R.id.avis);*/
 
         //Stocke varibale Drawer Menu Latéral
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
@@ -96,6 +95,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
         return false;
+    }
+
+    public void ClickNavigation(View v){
+        switch (v.getId()){
+            case R.id.scan:
+                showFragment(new ScanFragment());
+                break;
+            case R.id.rdv:
+                showFragment(new MesRendezVous());
+                break;
+            case R.id.docs:
+                showFragment(new MonDossierFragment());
+                break;
+            default:
+                showFragment(new ScanFragment());
+        }
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
 }

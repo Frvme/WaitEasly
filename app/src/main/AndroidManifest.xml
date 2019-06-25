@@ -21,6 +21,9 @@
             android:name=".Authentification"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
+            android:name=".InscriptionActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name=".StarterActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">

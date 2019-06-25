@@ -7,6 +7,11 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_infos">Informations</string>
 
+    <string name="signup1">Pas de compte ?</string>
+    <string name="signin1">Vous avez déjà un compte ? </string>
+    <string name="signup2">Créer un compte !</string>
+    <string name="signin2">Connectez vous !</string>
+
     <string name="login">appMobile</string>
     <string name="pwd">123456</string>
 
