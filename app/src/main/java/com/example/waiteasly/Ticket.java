@@ -6,28 +6,10 @@ import java.io.Serializable;
 
 public class Ticket implements Serializable {
 
-    private int userId;
+    @SerializedName("nbTicketBefore")
+    private int nbPerso;
 
-    private int id;
-
-    private String title;
-
-    @SerializedName("body")
-    private String text;
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getText() {
-        return text;
+    public int getNbPerso() {
+        return nbPerso;
     }
 }

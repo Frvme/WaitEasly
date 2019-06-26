@@ -8,11 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -47,43 +42,43 @@ public class MesRendezVous extends Fragment {
                 .build();
 
         jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
-        getCurrentTicket();
+//        getCurrentTicket();
 
         return myView;
     }
 
-    private void getCurrentTicket() {
-        Call<List<Ticket>> call = jsonPlaceHolderApi.getTicket("2");
-
-        call.enqueue(new Callback<List<Ticket>>() {
-            @Override
-            public void onResponse(Call<List<Ticket>> call, Response<List<Ticket>> response) {
-
-                if (!response.isSuccessful()) {
-                    textViewResult.setText("Code : " + response.code());
-                    return;
-                }
-
-                List<Ticket> tickets = response.body();
-
-                for (Ticket ticket : tickets) {
-                    String content = "";
-                    content += "ID: " + ticket.getId() + "\n";
-                    content += "User ID: " + ticket.getUserId() + "\n";
-                    content += "Title: " + ticket.getTitle() + "\n";
-                    content += "Text: " + ticket.getText() + "\n\n";
-
-                    textViewResult.append(content);
-
-                }
-            }
-
-
-            @Override
-            public void onFailure(Call<List<Ticket>> call, Throwable t) {
-
-                textViewResult.setText(t.getMessage());
-            }
-        });
-    }
+//    private void getCurrentTicket(){
+//        Call<List<Ticket>> call = jsonPlaceHolderApi.getTicket("2");
+//
+//        call.enqueue(new Callback<List<Ticket>>() {
+//            @Override
+//            public void onResponse(Call<List<Ticket>> call, Response<List<Ticket>> response) {
+//
+//               if(!response.isSuccessful()){
+//                    textViewResult.setText("Code : " + response.code());
+//                    return;
+//                }
+//
+//                List<Ticket> tickets = response.body();
+//
+//                for(Ticket ticket : tickets){
+//                    String content = "";
+//                    content += "ID: " + ticket.getId() + "\n";
+//                    content += "User ID: " + ticket.getUserId() + "\n";
+//                    content += "Title: " + ticket.getTitle() + "\n";
+//                    content += "Text: " + ticket.getText() + "\n\n";
+//
+//                    textViewResult.append(content);
+//
+//                }
+//            }
+//
+//
+//            @Override
+//            public void onFailure(Call<List<Ticket>> call, Throwable t) {
+//
+//                textViewResult.setText(t.getMessage());
+//            }
+//        });
+//    }
 }

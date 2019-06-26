@@ -11,8 +11,9 @@ public interface JsonPlaceHolderApi {
     @GET("posts")
     Call<List<Ticket>> getTickets();
 
-    @GET("posts")
-    Call<List<Ticket>> getTicket(@Query("id") String postId);
+    @GET("AzureApi.php/")
+    Call<List<Ticket>> getTicket(@Query("method") String methode, @Query("idTicket") String id);
+
 
 
 }

@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:drawableLeft="@drawable/user"
+            android:background="@drawable/border_radius"
             android:drawablePadding="10sp"
             android:hint="Identifiant"
             android:inputType="textPersonName" />
@@ -43,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:drawableLeft="@drawable/email"
+            android:background="@drawable/border_radius"
             android:drawablePadding="10sp"
             android:hint="Email"
             android:inputType="textEmailAddress" />
@@ -54,6 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:background="@drawable/border_radius"
             android:drawableLeft="@drawable/lock"
             android:drawablePadding="10sp"
             android:hint="Password"
@@ -67,6 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:drawableLeft="@drawable/lock"
+            android:background="@drawable/border_radius"
             android:drawablePadding="10sp"
             android:hint="Confirm password"
             android:inputType="textPassword"/>
