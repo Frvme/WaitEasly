@@ -6,9 +6,21 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class MesRendezVous extends Fragment {
+
+    private TextView textViewResult;
+    private JsonPlaceHolderApi jsonPlaceHolderApi;
+    private View myView;
+
 
     public MesRendezVous() {
         // Required empty public constructor
@@ -23,7 +35,52 @@ public class MesRendezVous extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mes_rendez_vous, container, false);
+        myView = inflater.inflate(R.layout.fragment_mes_rendez_vous, container, false);
+
+        textViewResult = myView.findViewById(R.id.text_view_result);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://jsonplaceholder.typicode.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+        getCurrentTicket();
+
+        return myView;
     }
 
+    private void getCurrentTicket() {
+        Call<Ticket> call = jsonPlaceHolderApi.getTicket(2);
+
+        call.enqueue(new Callback<Ticket>() {
+            @Override
+            public void onResponse(Call<Ticket> call, Response<Ticket> response) {
+
+                if (!response.isSuccessful()) {
+                    textViewResult.setText("Code : " + response.code());
+                    return;
+                }
+
+                Ticket tickets = response.body();
+
+                /*for(Ticket ticket : tickets){*/
+                String content = "";
+                content += "ID: " + tickets.getId() + "\n";
+                content += "User ID: " + tickets.getUserId() + "\n";
+                content += "Title: " + tickets.getTitle() + "\n";
+                content += "Text: " + tickets.getText() + "\n\n";
+
+                textViewResult.append(content);
+
+                //}
+            }
+
+            @Override
+            public void onFailure(Call<Ticket> call, Throwable t) {
+
+                textViewResult.setText(t.getMessage());
+            }
+        });
+    }
 }
