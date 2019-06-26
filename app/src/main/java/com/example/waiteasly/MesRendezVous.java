@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -51,33 +53,34 @@ public class MesRendezVous extends Fragment {
     }
 
     private void getCurrentTicket() {
-        Call<Ticket> call = jsonPlaceHolderApi.getTicket(2);
+        Call<List<Ticket>> call = jsonPlaceHolderApi.getTicket("2");
 
-        call.enqueue(new Callback<Ticket>() {
+        call.enqueue(new Callback<List<Ticket>>() {
             @Override
-            public void onResponse(Call<Ticket> call, Response<Ticket> response) {
+            public void onResponse(Call<List<Ticket>> call, Response<List<Ticket>> response) {
 
                 if (!response.isSuccessful()) {
                     textViewResult.setText("Code : " + response.code());
                     return;
                 }
 
-                Ticket tickets = response.body();
+                List<Ticket> tickets = response.body();
 
-                /*for(Ticket ticket : tickets){*/
-                String content = "";
-                content += "ID: " + tickets.getId() + "\n";
-                content += "User ID: " + tickets.getUserId() + "\n";
-                content += "Title: " + tickets.getTitle() + "\n";
-                content += "Text: " + tickets.getText() + "\n\n";
+                for (Ticket ticket : tickets) {
+                    String content = "";
+                    content += "ID: " + ticket.getId() + "\n";
+                    content += "User ID: " + ticket.getUserId() + "\n";
+                    content += "Title: " + ticket.getTitle() + "\n";
+                    content += "Text: " + ticket.getText() + "\n\n";
 
-                textViewResult.append(content);
+                    textViewResult.append(content);
 
-                //}
+                }
             }
 
+
             @Override
-            public void onFailure(Call<Ticket> call, Throwable t) {
+            public void onFailure(Call<List<Ticket>> call, Throwable t) {
 
                 textViewResult.setText(t.getMessage());
             }

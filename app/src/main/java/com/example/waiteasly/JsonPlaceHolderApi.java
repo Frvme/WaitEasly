@@ -11,6 +11,9 @@ public interface JsonPlaceHolderApi {
     @GET("posts")
     Call<List<Ticket>> getTickets();
 
-    @GET("posts/{id}")
-    Call<Ticket> getTicket(@Query("id") int postId);
+    @GET("posts")
+    Call<List<Ticket>> getTicket(@Query("id") String postId);
+
+
 }
+
