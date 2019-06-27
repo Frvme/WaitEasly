@@ -15,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MesRendezVous extends Fragment {
 
     private TextView textViewResult;
-    private JsonPlaceHolderApi jsonPlaceHolderApi;
+    private WaitEasilyAPI waitEasilyAPI;
     private View myView;
 
 
@@ -41,14 +41,14 @@ public class MesRendezVous extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+        waitEasilyAPI = retrofit.create(WaitEasilyAPI.class);
 //        getCurrentTicket();
 
         return myView;
     }
 
 //    private void getCurrentTicket(){
-//        Call<List<Ticket>> call = jsonPlaceHolderApi.getTicket("2");
+//        Call<List<Ticket>> call = waitEasilyAPI.getCurrentTicket("2");
 //
 //        call.enqueue(new Callback<List<Ticket>>() {
 //            @Override

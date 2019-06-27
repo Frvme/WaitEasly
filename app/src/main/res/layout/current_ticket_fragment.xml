@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragmentTwo"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -29,7 +28,6 @@
             android:gravity="center"
             android:textColor="@android:color/white"
             android:textSize="50sp"
-            android:text="12"
             android:background="#a5d6a7"/>
         <TextView
             android:layout_width="wrap_content"
@@ -74,13 +72,22 @@
             android:id="@+id/nbres"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="5"/>
+            android:textSize="20sp" />
             </LinearLayout>
 
-    </LinearLayout>
 
     </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="9dp"
+        android:text="Rafraichir" />
 
 </RelativeLayout>
 

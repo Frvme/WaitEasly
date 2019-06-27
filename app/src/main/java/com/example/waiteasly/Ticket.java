@@ -1,15 +1,15 @@
 package com.example.waiteasly;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
-
-public class Ticket implements Serializable {
+public class Ticket {
 
     @SerializedName("nbTicketBefore")
-    private int nbPerso;
+    @Expose
+    private String nbPerso;
 
-    public int getNbPerso() {
+    public String getNbPerso() {
         return nbPerso;
     }
 }
